@@ -2,10 +2,9 @@ server:
   port: 8003
 eureka:
   client:
-    client:
-      fetch-registry: true
-      register-with-eureka: true
-      service-url:
-        default-zone: http://localhost:8761/eureka
-      instance:
-        hostname: localhost
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost
