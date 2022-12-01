@@ -100,14 +100,14 @@ public class UsuarioService {
 		
 		resultado.put("Usuario", usuario);
 		List<Carro> carros = carroFeignClient.listarCarroDeUsuario(usuarioId);
-		if(carros.isEmpty()) {
+		if(carros == null || carros.isEmpty()) {
 			resultado.put("Carros", "El usuario no tiene carros");
 		}else {
 			resultado.put("Carros", carros);
 		}
 		
 		List<Moto> motos = motoFeignClient.findMotosUsuario(usuarioId);
-		if(motos.isEmpty()) {
+		if(motos == null || motos.isEmpty()) {
 			resultado.put("Motos", "El usuario no tiene motos");
 		}else {
 			resultado.put("Motos",motos);
