@@ -35,13 +35,13 @@ public class UsuarioService {
 	
 	//comunicacion con microservicio carro accediendo a su endpoint getCarroByUsuario
 	public List<Carro> getCarros(int usuarioId){
-		List<Carro> carros = restTemplate.getForObject("http://localhost:8082/carro/usuario/" + usuarioId, List.class);
+		List<Carro> carros = restTemplate.getForObject("http://carro-service/carro/usuario/" + usuarioId, List.class);
 		return carros;
 	}
 	
 	//comunicacion con microservicio moto accediendo a su endpoint getMotoByUsuario
 	public List<Moto> getMotos(int usuarioId){
-		List<Moto> motos = restTemplate.getForObject("http://localhost:8083/moto/usuario/" + usuarioId, List.class);
+		List<Moto> motos = restTemplate.getForObject("http://moto-service/moto/usuario/" + usuarioId, List.class);
 		return motos;
 	}
 	
